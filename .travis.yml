@@ -1,0 +1,41 @@
+sudo: false
+language: cpp
+matrix:
+  include:
+    - name: "Linux"
+      os: linux
+      env: CONFIG=Release
+    - name: "OSX"
+      os: osx
+      env: CONFIG=Release
+
+before_script:
+  - travis_wait source Env/setupEnv.sh Env/environment.yml Env/env
+  - source Env/env.sh
+  - conda list
+  - python -c "import tensorflow as tf"
+  - export BASEDIR=$PWD
+  - mkdir $BASEDIR/Ops/build
+  - cd $BASEDIR/Ops/build
+  - cmake -D CMAKE_BUILD_TYPE=$CONFIG -D CMAKE_INSTALL_PREFIX=$BASEDIR/Ops/build/release ..
+
+script: 
+  - cmake --build . --config $CONFIG --target install
+  - ctest -C $CONFIG || ctest -V -C $CONFIG
+  - export PYTHONPATH=$BASEDIR/Ops/build/release:$PYTHONPATH
+  - export LD_LIBRARY_PATH=$BASEDIR/Ops/build/release:$LD_LIBRARY_PATH
+  - cd $BASEDIR
+  - export OMP_NUM_THREADS=1
+  - python pipeline.py
+  
+branches:
+  only:
+    - master
+    
+notifications:
+  email:
+    recipients:
+      - mkomm@cern.ch
+    on_success: change
+    on_failure: always
+
