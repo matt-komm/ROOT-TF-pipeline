@@ -201,7 +201,7 @@ class RootReaderOp:
         mutex localMutex_; //protects class members
         std::unique_ptr<TFile> inputFile_;
         TTree* tree_;
-        std::vector<std::shared_ptr<TensorFiller<float>>> tensorFillers_;
+        std::vector<std::unique_ptr<TensorFiller<float>>> tensorFillers_;
         int currentEntry_;
         
         float naninf_;
@@ -248,7 +248,7 @@ class RootReaderOp:
                     if (it==name.end())
                     {
                         tensorFillers_.emplace_back(
-                            std::make_shared<
+                            std::make_unique<
                                 TensorFillerTmpl<float>
                             >(
                                 context,
@@ -268,7 +268,7 @@ class RootReaderOp:
                     int size = std::stoi(std::string(p1+1,p2));
                     size_+=size;
                     tensorFillers_.emplace_back(
-                        std::make_shared<TensorFillerTmpl<float>>(
+                        std::make_unique<TensorFillerTmpl<float>>(
                             context,
                             "expr_"+std::to_string(iname),
                             branchName,
@@ -283,6 +283,7 @@ class RootReaderOp:
         {
             RootMutex::Lock lock = RootMutex::lock();
             tensorFillers_.clear();
+            if (inputFile_) inputFile_->Close();
         }
         
         void Compute(OpKernelContext* context)

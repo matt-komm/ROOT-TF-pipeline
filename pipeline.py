@@ -1,13 +1,8 @@
-import keras
 import os
-import time
-import math
-import random
 import glob
 import numpy as np
 
 import tensorflow as tf
-import ROOT
 
 from keras import backend as K
 import rtf
@@ -27,7 +22,7 @@ def input_pipeline(input_file_list, features, batch_size, repeat = 1, max_thread
         
         if os.environ.has_key('OMP_NUM_THREADS'):
             try:
-                max_threads = int(os.environ["OMP_NUM_THREADS"])
+                max_threads = max(1,int(os.environ["OMP_NUM_THREADS"]))
             except Exception:
                 pass
         
@@ -74,17 +69,7 @@ test_batch = input_pipeline(
     feature_dict,
     batch_size=100
 )
-'''
-inputLayers = keras.layers.Input(shape=(25,17))
-conv = keras.layers.Conv1D(16)(inputLayers)
-conv = keras.layers.Conv1D(16)(conv)
-dense = keras.layers.Flatten()(conv)
-dense = keras.layers.Dense(10)(dense)
-classPrediction = keras.layers.Dense(5)(dense)
 
-model = keras.models.Model(inputs=[inputLayers],outputs=[classPrediction])
-model.summary()
-'''
 init_op = tf.group(
     tf.global_variables_initializer(),
     tf.local_variables_initializer()
@@ -101,8 +86,8 @@ try:
     while not coord.should_stop():
         step += 1
         train_batch_value = sess.run(train_batch)
-        if step==1:
-            print train_batch_value
+        #if step==1:
+        #    print train_batch_value
         if step%50==0:
             print "step",step
             for k in train_batch_value.keys():

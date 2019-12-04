@@ -15,6 +15,7 @@ developed in the context of
 
 ## Dependencies
 
+* g++ 7.3
 * Python 2.7
 * ROOT 6
 * TensorFlow >=1.4 (incompatible with 2.X)
@@ -40,7 +41,7 @@ make install
 Check if everything is working by running ```ctest``` from the build directory.
 
 The following variables need to be set to use the created python package 
-system-wide: 
+system-wide:
 
 ```
 export PYTHONPATH=$PWD/release:$PYTHONPATH
@@ -53,10 +54,10 @@ Files containing flat ROOT TTrees for testing the pipeline are available
 in the ```Samples``` directory. These have been produced from the following
 open dataset:
 
-> CMS Collaboration (2019). Simulated dataset 
-> ```QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8``` in ```MINIAODSIM``` format 
-> for 2016 collision data. CERN Open Data Portal. 
-> [DOI:10.7483/OPENDATA.CMS.J52Q.4T4E](http://opendata.cern.ch/record/12021)
+CMS Collaboration (2019). Simulated dataset 
+```QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8``` in ```MINIAODSIM``` format 
+for 2016 collision data. CERN Open Data Portal. 
+[DOI:10.7483/OPENDATA.CMS.J52Q.4T4E](http://opendata.cern.ch/record/12021)
 
 
 ## Run the pipeline example
