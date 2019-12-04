@@ -1,0 +1,5 @@
+theme: jekyll-theme-minimal
+title: ROOT-TF pipeline
+description: Demonstration of a ROOT-based preprocessing pipeline for TensorFlow/Keras
+logo: logo.png
+show_downloads: true
