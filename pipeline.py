@@ -1,13 +1,16 @@
 import os
 import glob
 import numpy as np
-
 import tensorflow as tf
-
 from keras import backend as K
 import rtf
+import ROOT
 
 from features import feature_dict
+
+def create_weight_histograms(input_file_list,features):
+    hists_per_class = []
+    for name in features['truth']
 
 def input_pipeline(input_file_list, features, batch_size, repeat = 1, max_threads = 6):
     with tf.device('/cpu:0'):

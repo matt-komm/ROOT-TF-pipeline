@@ -1,5 +1,7 @@
 # ROOT-based preprocessing pipeline for TensorFlow/Keras
 
+![logo](https://matt-komm.github.io/ROOT-TF-pipeline/logo.png)
+
 [![Build Status](https://travis-ci.com/matt-komm/ROOT-TF-pipeline.svg?branch=master)](https://travis-ci.com/matt-komm/ROOT-TF-pipeline)
 
 ## Description
@@ -9,7 +11,7 @@ including a direct interface to [ROOT TTrees](https://root.cern.ch/doc/master/cl
 developed in the context of 
 
 * CMS Collaboration, "A deep neural network-based tagger to search for 
-new long-lived particle states decaying to jets", (*paper in preparation*).
+new long-lived particle states decaying to jets", (2019) (*paper in preparation*).
 
 ### More information
 
@@ -17,7 +19,7 @@ new long-lived particle states decaying to jets", (*paper in preparation*).
 
 ---
 
-### Authors
+## Authors
 
 Matthias Komm, Vilius Cepaitis, Robert Bainbridge, Alex Tapper, 
 Oliver Buchmüller.
