@@ -1,6 +1,6 @@
 # ROOT-based preprocessing pipeline for TensorFlow/Keras
 
-![logo](https://matt-komm.github.io/ROOT-TF-pipeline/logo.png)
+![logo](https://raw.githubusercontent.com/matt-komm/ROOT-TF-pipeline/gh-pages/logo_small.png)
 
 [![Build Status](https://travis-ci.com/matt-komm/ROOT-TF-pipeline.svg?branch=master)](https://travis-ci.com/matt-komm/ROOT-TF-pipeline)
 
