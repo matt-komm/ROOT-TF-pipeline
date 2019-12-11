@@ -2,7 +2,8 @@
 
 ![logo](https://raw.githubusercontent.com/matt-komm/ROOT-TF-pipeline/gh-pages/logo_small.png)
 
-Linux and OSX: [![Build Status](https://travis-ci.com/matt-komm/ROOT-TF-pipeline.svg?branch=master)](https://travis-ci.com/matt-komm/ROOT-TF-pipeline)
+Linux and OSX: [![Build Status](https://travis-ci.com/matt-komm/ROOT-TF-pipeline.svg?branch=master)](https://travis-ci.com/matt-komm/ROOT-TF-pipeline) 
+[![DOI](https://zenodo.org/badge/218320570.svg)](https://zenodo.org/badge/latestdoi/218320570)
 
 ## Description
 
