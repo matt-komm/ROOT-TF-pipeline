@@ -51,7 +51,7 @@ function run_setup()
         return 1
     fi
     
-    curl -sS -o $INSTALL_DIR/$CONDASCRIPT https://repo.continuum.io/miniconda/$CONDASCRIPT || return 1
+    curl -sS -o $INSTALL_DIR/$CONDASCRIPT https://repo.anaconda.com/miniconda/$CONDASCRIPT || return 1
     bash $INSTALL_DIR/$CONDASCRIPT -b -s -p $INSTALL_DIR/miniconda || return 1
 
     CONDA_BIN=$INSTALL_DIR/miniconda/bin
