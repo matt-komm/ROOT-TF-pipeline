@@ -10,7 +10,7 @@ matrix:
       env: CONFIG=Release
 
 before_script:
-  - travis_wait source Env/setupEnv.sh Env/environment.yml Env/env
+  - travis_wait 40 source Env/setupEnv.sh Env/environment.yml Env/env
   - source Env/env.sh
   - conda list
   - python -c "import tensorflow as tf"
