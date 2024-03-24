@@ -5,7 +5,7 @@ includes a direct interface to [ROOT TTrees](https://root.cern.ch/doc/master/cla
 which was developed in the context of:
 
 * CMS Collaboration, "Searching for new long-lived particle states decaying to 
-jets using a deep neural network", (2019), (*paper in preparation*).
+jets using a deep neural network", Mach. Learn.: Sci. Technol. 1 (2020) 035012, [doi:10.1088/2632-2153/ab9023](https://doi.org/10.1088/2632-2153/ab9023).
 
 
 ## Dependencies
